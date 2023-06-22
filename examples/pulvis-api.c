@@ -88,8 +88,8 @@ int main(int argc, char *argv[])
     printf("fes error : %s\n", fes_error(radial_tide));
     goto error;
   }
-  uint twentyYearsInDays = 7305;
-  uint secondsInDay = 86400;
+  unsigned int twentyYearsInDays = 7305;
+  unsigned int secondsInDay = 86400;
   time = (epochSeconds / 86400) + twentyYearsInDays;
 
   // Compute ocean tide
