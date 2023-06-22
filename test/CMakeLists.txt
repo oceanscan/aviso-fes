@@ -19,7 +19,7 @@ get_filename_component(FES_DATA "data" ABSOLUTE)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src)
 
-# Canfigure unit test
+# Configure unit test
 macro(CONFIGURE_TEST test)
   add_executable(${test} ${test}.c)
   target_link_libraries(${test} fes ${NETCDF_LIBRARIES} ${MATH_LIBRARY})

@@ -17,3 +17,11 @@ target_link_libraries(fes_slev fes ${NETCDF_LIBRARIES} ${MATH_LIBRARY})
 target_compile_definitions(
   fes_slev PRIVATE INI="${CMAKE_SOURCE_DIR}/test/fes.ini"
                    FES_DATA="${CMAKE_SOURCE_DIR}/test/data")
+
+add_executable(pulvis-api pulvis-api.c)
+target_link_libraries(pulvis-api fes ${NETCDF_LIBRARIES} ${MATH_LIBRARY})
+target_compile_definitions(
+  pulvis-api PRIVATE OCEAN_INI="${CMAKE_SOURCE_DIR}/data/fes2014/ocean_tide_extrapolated.ini"
+                     FES_DATA="${CMAKE_SOURCE_DIR}/data/fes2014/"
+                     LOAD_INI="${CMAKE_SOURCE_DIR}/data/fes2014/load_tide.ini"
+)
